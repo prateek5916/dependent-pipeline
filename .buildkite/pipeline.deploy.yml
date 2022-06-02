@@ -1,5 +1,5 @@
 steps:
-  - command: edsdcho 'Deploy'
+  - command: echo 'Deploy'
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
     concurrency: 1
