@@ -6,7 +6,7 @@ steps:
   - trigger: dependent-pipeline-example-deploy
     label: ":rocket:"
     branches: "master"
-    async: false
+    async: true
     build:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
