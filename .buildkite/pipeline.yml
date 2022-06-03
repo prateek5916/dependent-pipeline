@@ -1,8 +1,9 @@
 steps:
-  - command: echo 'Tests'
+  - command: echo 'First Stage'
     label: ':hammer:'
   - wait
   - trigger: dependent-pipeline-example-deploy
+    key: "deploy"
     label: ":rocket:"
     branches: "master"
     async: false
@@ -10,7 +11,7 @@ steps:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
       message: "$BUILDKITE_MESSAGE"
-#   - command: echo 'Tests'
-#     key: "test"
-#     label: ':hammer:'
-#     depends_on: "test"
+  - command: echo 'Last Stage'
+    key: "last"
+    label: ':hammer:'
+    depends_on: "deploy"
