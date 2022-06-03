@@ -2,11 +2,11 @@ steps:
   - command: echo 'Tests'
     key: "test"
     label: ':hammer:'
-  - wait
+  #- wait
   - trigger: dependent-pipeline-example-deploy
     label: ":rocket:"
     branches: "master"
-    async: true
+    #async: true
     build:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
