@@ -1,0 +1,2 @@
+if [[ "${BUILDKITE_COMMAND_EXIT_STATUS}" -ne "0" ]]; then
+  echo "Job Failed"
