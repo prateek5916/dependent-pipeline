@@ -1,5 +1,5 @@
 steps:
- - command: echo 'Tests'
+  - command: echo 'Tests'
     key: "test"
     label: ':hammer:'
   - wait
@@ -11,5 +11,4 @@ steps:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
       message: "$BUILDKITE_MESSAGE"
-    depends_on: "tests"
- 
+    depends_on: "test"
