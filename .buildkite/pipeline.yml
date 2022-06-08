@@ -46,7 +46,7 @@ steps:
     #if: "build.env('release_type') != 'None'"
     command: |
       if [ "$(buildkite-agent meta-data get release_type)" == "Patch" ]; then
-        echo Building release of "$release_type"
+         .buildkite/scripts/approval.sh
       fi
 
   - label: "Cancelled release"
