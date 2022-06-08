@@ -22,7 +22,7 @@ steps:
             value: "yes"
           - label: "No"
             value: "no"
-  - command: `../scripts/script.sh`
+  - command: '../scripts/script.sh'
     key: "$(bash 'require("../scripts/script.sh").init("${APPROVAL_RESPONSE}")')"
   - command: echo 'Last Stage'
     key: "last"
