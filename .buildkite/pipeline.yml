@@ -2,15 +2,6 @@ steps:
   - command: echo 'First Stage'
     label: ':hammer:'
   - wait
-  - trigger: dependent-pipeline-example-deploy
-    key: "deploy"
-    label: ":rocket:"
-    branches: "master"
-    async: false
-    build:
-      commit: "$BUILDKITE_COMMIT"
-      branch: "$BUILDKITE_BRANCH"
-      message: "$BUILDKITE_MESSAGE"
 
   - block: ":rocket: PROD Release!"
     prompt: You are about to create a new release. This cannot be undone.
