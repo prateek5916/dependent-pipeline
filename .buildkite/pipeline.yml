@@ -29,7 +29,5 @@ steps:
 #       echo $APPROVAL_RESPONSE
 #       export APPROVAL_RESPONSE
 
-#   - command: echo 'Last Stage'
-#     key: "last"
-#     label: ':hammer:'
-#     depends_on: "approval-stage"
+  - command: '../scripts/approval.sh'
+    label: ":hammer: echo"
