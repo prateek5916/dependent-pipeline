@@ -18,6 +18,16 @@ steps:
             value: "no"
 
   - wait: ~
+  - label: "Load release type into env variable"
+    command: |
+      export approval-stage=$(buildkite-agent meta-data get approval-stage)
+  
+  - wait: ~
+
+  - label: "Triggering primarily pipeline to build and release"
+    if: "build.env('approval-stage') == 'yes'"
+    command: |
+      echo Building release of "$approval-stage"
 
   - label: "Triggering primarily pipeline to build and release"
     key: "next_file"
