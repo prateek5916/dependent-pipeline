@@ -33,7 +33,7 @@ steps:
          # chmod 777 .buildkite/scripts/approval.sh
          # .buildkite/scripts/approval.sh
          pwd && ls
-         buildkite-agent pipeline upload pipeline1.yml
+         buildkite-agent pipeline upload ./pipeline1.yml
       else
         echo "GoodBye"
       fi
