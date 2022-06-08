@@ -1,11 +1,11 @@
 const downstream_pipeline_name = "dependent-pipeline-example-deploy"
 const downstream_branch_name = "master"
-const dependsOn = "next_file"
 
 
-exports.upstreamTrigger = (downstream_pipeline_name, downstream_branch_name, dependsOn) => {
+exports.upstreamTrigger = (downstream_pipeline_name, downstream_branch_name) => {
   return[{
-    depends_on: dependsOn,
+    wait,
+    depends_on: "next_file",
     label: `:hammer: Triggering ${downstream_pipeline_name} for branch ${downstream_branch_name}`,
     trigger: downstream_pipeline_name,
     key: 'deploy',
