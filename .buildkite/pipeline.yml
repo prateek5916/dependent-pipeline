@@ -9,7 +9,7 @@ steps:
     prompt: You are about to create a new release. This cannot be undone.
     fields:
       - select: "Release type"
-        key: "approval-stage"
+        key: "approval_stage"
         multiple: false
         options:
           - label: "Yes"
@@ -20,20 +20,20 @@ steps:
   - wait: ~
   - label: "Load release type into env variable"
     command: |
-      export approval-stage=$(buildkite-agent meta-data get approval-stage)
+      export approval_stage=$(buildkite-agent meta-data get approval_stage)
   
   - wait: ~
 
   - label: "Triggering primarily pipeline to build and release"
-    if: "build.env('approval-stage') == 'yes'"
+    if: "build.env('approval_stage') == 'yes'"
     command: |
-      echo Building release of "$approval-stage"
+      echo Building release of $approval_stage
 
   - label: "Triggering primarily pipeline to build and release"
     key: "next_file"
     depends_on: "Second"
     command: |
-      if [ "$(buildkite-agent meta-data get approval-stage)" == "yes" ]; then
+      if [ "$(buildkite-agent meta-data get approval_stage)" == "yes" ]; then
          node demo.js
       else
         echo "GoodBye"
