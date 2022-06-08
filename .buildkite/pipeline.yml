@@ -25,7 +25,7 @@ steps:
   - wait: ~
   
   - label: "Load release type into env variable"
-  command: |
+    command: |
       export APPROVAL_RESPONSE=$(buildkite-agent meta-data get approval-stage)
   
   - wait: ~
