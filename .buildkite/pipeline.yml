@@ -16,25 +16,23 @@ steps:
     prompt: You are about to create a new release. This cannot be undone.
     fields:
       - select: "Release type"
-        key: "release_type"
+        key: "approval-stage"
         multiple: false
         options:
-          - label: "Patch"
-            value: "Patch"
-          - label: "Minor"
-            value: "Minor"
-          - label: "Major"
-            value: "Major"
-          - label: "None (What are you doing here then?)"
-            value: "None"
-  - wait: ~
+          - label: "Yes"
+            value: "yes"
+          - label: "No"
+            value: "no"
 
   - wait: ~
 
   - label: "Triggering primarily pipeline to build and release"
-    #if: "build.env('release_type') != 'None'"
+    key: "next_file"
     command: |
-      if [ "$(buildkite-agent meta-data get release_type)" == "Patch" ]; then
-         chmod 777 .buildkite/scripts/approval.sh
-         .buildkite/scripts/approval.sh
+      if [ "$(buildkite-agent meta-data get approval-stage)" == "yes" ]; then
+         # chmod 777 .buildkite/scripts/approval.sh
+         # .buildkite/scripts/approval.sh
+         node .buildkite/pipeline.js
+      else
+        echo "GoodBye"
       fi
