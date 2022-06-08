@@ -2,4 +2,4 @@
 set -eo pipefail
 
 APPROVAL_RESPONSE="$(buildkite-agent meta-data get "approval-stage")"
-echo "$APPROVAL_RESPONSE"
+echo "approval: $APPROVAL_RESPONSE"
