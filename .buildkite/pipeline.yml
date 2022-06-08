@@ -29,5 +29,5 @@ steps:
 #       echo $APPROVAL_RESPONSE
 #       export APPROVAL_RESPONSE
 
-  - command: '../scripts/approval.sh'
+  - command: '.buildkite/scripts/approval.sh'
     label: ":hammer: echo"
