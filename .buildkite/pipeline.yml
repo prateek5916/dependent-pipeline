@@ -23,20 +23,20 @@ steps:
           - label: "No"
             value: "no"
   - wait: ~
-  
+
   - label: "Load release type into env variable"
     command: |
-      APPROVAL_RESPONSE="$(buildkite-agent meta-data get "approval-stage")"
+      export approval-stage=$(buildkite-agent meta-data get approval-stage)
   
   - wait: ~
 
   - label: "Triggering primarily pipeline to build and release"
-    if: "build.env('APPROVAL_RESPONSE') == 'yes'"
+    if: "build.env('approval-stage') == 'yes'"
     command: |
-      echo Building release of "$APPROVAL_RESPONSE"
+      echo Building release of "$approval-stage"
 
   - label: "Cancelled release"
-    if: "build.env('APPROVAL_RESPONSE') == 'no'"
+    if: "build.env('approval-stage') == 'No'"
     command: echo Cancelled release
 #   - label: ":rocket:  inline sh"
 #     command: |
