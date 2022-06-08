@@ -11,7 +11,18 @@ steps:
       commit: "$BUILDKITE_COMMIT"
       branch: "$BUILDKITE_BRANCH"
       message: "$BUILDKITE_MESSAGE"
+  - block: "Approval: yes or no"
+    fields:
+      - select: "Approval stage"
+        key: "approval-stage"
+        hint: "Major and minor versions should only be incremented as discussed with your Delivery Lead :fork:"
+        required: true
+        options:
+          - label: "Yes"
+            value: "yes"
+          - label: "No"
+            value: "no"
   - command: echo 'Last Stage'
     key: "last"
     label: ':hammer:'
-    depends_on: "deploy"
+#     depends_on: "deploy"
