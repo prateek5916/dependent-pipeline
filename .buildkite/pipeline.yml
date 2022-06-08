@@ -36,8 +36,9 @@ steps:
       echo Building release of "$approval-stage"
 
   - label: "Cancelled release"
-    if: "build.env('approval-stage') == 'No'"
+    if: "build.env('approval-stage') == 'no'"
     command: echo Cancelled release
+
 #   - label: ":rocket:  inline sh"
 #     command: |
 #       set -eo pipefail
