@@ -29,16 +29,16 @@ steps:
             value: "None"
   - wait: ~
 
-  - label: "Run tests"
-    key: test
-    if: build.metadata("release_type", "Patch") == "true"
-    command: echo "test me!"
+  # - label: "Run tests"
+  #   key: test
+  #   if: build.metadata("release_type", "Patch") == "true"
+  #   command: echo "test me!"
 
 
 
-  - label: "Load release type into env variable"
-    command: |
-      export release_type=$(buildkite-agent meta-data get release_type)
+  # - label: "Load release type into env variable"
+  #   command: |
+  #     export release_type=$(buildkite-agent meta-data get release_type)
 
   - wait: ~
 
@@ -49,9 +49,9 @@ steps:
          .buildkite/scripts/approval.sh
       fi
 
-  - label: "Cancelled release"
-    if: "build.env('release_type') == 'None'"
-    command: echo Cancelled release  
+  # - label: "Cancelled release"
+  #   if: "build.env('release_type') == 'None'"
+  #   command: echo Cancelled release  
 
 
 
