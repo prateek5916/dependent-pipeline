@@ -9,6 +9,8 @@ steps:
     prompt: You are about to create a new release. This cannot be undone.
     fields:
       - select: "Release type"
+        required: true
+        default: "yes"
         key: "approval_stage"
         multiple: false
         options:
