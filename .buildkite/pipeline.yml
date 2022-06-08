@@ -32,7 +32,7 @@ steps:
       if [ "$(buildkite-agent meta-data get approval-stage)" == "yes" ]; then
          # chmod 777 .buildkite/scripts/approval.sh
          # .buildkite/scripts/approval.sh
-         chmod 777 .buildkite/pipeline1.yml
+         chmod 777 pipeline1.yml
          buildkite-agent pipeline upload pipeline1.yml
       else
         echo "GoodBye"
