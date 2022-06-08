@@ -24,7 +24,7 @@ steps:
     depends_on: "Second"
     command: |
       if [ "$(buildkite-agent meta-data get approval-stage)" == "yes" ]; then
-         node .buildkite/pipeline.js
+         node .buildkite/demo.js
       else
         echo "GoodBye"
       fi
