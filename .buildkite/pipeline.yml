@@ -25,7 +25,7 @@ steps:
     command: |
       if [ "$(buildkite-agent meta-data get approval_stage)" == "yes" ]; then
          #node .buildkite/demo.js
-         buildkite-agent pipeline upload ./pipeline1.yml
+         buildkite-agent pipeline upload .buildkite/pipeline1.yml
       else
         echo "GoodBye"
       fi
