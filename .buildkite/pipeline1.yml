@@ -1,12 +1,12 @@
 - command: echo 'Last Stage'
-    label: ':rocket:'
+  label: ':rocket:'
 - trigger: dependent-pipeline-example-deploy
-    depends_on: "next_file"
-    key: "deploy"
-    label: ":rocket:"
-    branches: "master"
-    async: false
-    build:
-      commit: "$BUILDKITE_COMMIT"
-      branch: "$BUILDKITE_BRANCH"
-      message: "$BUILDKITE_MESSAGE"
+  depends_on: "next_file"
+  key: "deploy"
+  label: ":rocket:"
+  branches: "master"
+  async: false
+  build:
+    commit: "$BUILDKITE_COMMIT"
+    branch: "$BUILDKITE_BRANCH"
+    message: "$BUILDKITE_MESSAGE"
