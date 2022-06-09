@@ -1,6 +1,7 @@
 - command: echo 'Last Stage'
     label: ':rocket:'
-  - trigger: dependent-pipeline-example-deploy
+- trigger: dependent-pipeline-example-deploy
+    depends_on: "next_file"
     key: "deploy"
     label: ":rocket:"
     branches: "master"
