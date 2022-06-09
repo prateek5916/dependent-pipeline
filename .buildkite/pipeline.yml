@@ -3,12 +3,12 @@ steps:
     label: ':hammer:'
     key: "First"
   - wait
-  - block: ":rocket: PROD Release!"
+  - block: ":rocket: Approval Release!"
     depends_on: "First"
     key: "Second"
-    prompt: You are about to create a new release. This cannot be undone.
+    prompt: Select Yes or No to deploy Murray Env.
     fields:
-      - select: "Release type"
+      - select: "Approval Stage"
         required: true
         default: "yes"
         key: "approval_stage"
@@ -19,20 +19,7 @@ steps:
           - label: "No"
             value: "no"
 
-  # - wait: ~
-  # - label: "Load release type into env variable"
-  #   command: |
-  #     export approval_stage=$(buildkite-agent meta-data get approval_stage)
-  #     echo "Demo $approval_stage"
-  
-  # - wait: ~
-
-  # - label: "Triggering primarily pipeline to build and release"
-  #   if: "build.env('approval_stage') == 'yes'"
-  #   command: |
-  #     echo Building release of $approval_stage
-
-  - label: "Triggering primarily pipeline to build and release"
+  - label: "Triggering Pipeline2 : Yes or No"
     key: "next_file"
     depends_on: "Second"
     command: |
