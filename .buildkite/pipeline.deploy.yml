@@ -1,5 +1,5 @@
 steps:
-  - command: echo process.env.var1
+  - command: echo "${var1}"
     label: ":rocket:"
     concurrency_group: "$BUILDKITE_PIPELINE_SLUG-deploy"
     concurrency: 1
