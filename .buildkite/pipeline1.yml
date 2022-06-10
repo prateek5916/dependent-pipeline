@@ -10,3 +10,9 @@
     commit: "$BUILDKITE_COMMIT"
     branch: "$BUILDKITE_BRANCH"
     message: "$BUILDKITE_MESSAGE"
+    env: 
+      var1: "hello world"
+      var2: "hello!!!"
+- command: echo process.env.var1
+  label: ':rocket:'
+  
