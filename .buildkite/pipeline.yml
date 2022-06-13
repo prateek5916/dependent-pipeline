@@ -18,6 +18,7 @@ steps:
             value: "yes"
           - label: "No"
             value: "no"
+    command: bash script/approval.sh
 
   - label: "Triggering Pipeline2 : Yes or No"
     key: "next_file"
