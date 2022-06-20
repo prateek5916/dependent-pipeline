@@ -24,7 +24,7 @@ steps:
     key: "next_file"
     depends_on: "Second"
     command: |
-      if [ "$(buildkite-agent meta-data get approval_stage)" == "yes" ]; then
+      if [ "$ )" == "yes" ]; then
         buildkite-agent pipeline upload .buildkite/pipeline1.yml
       else
         echo "GoodBye"
