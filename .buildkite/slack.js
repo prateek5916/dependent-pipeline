@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { IncomingWebhook } = require('@slack/webhook');
 
- const channel = 'random';
+ const channel = 'testing';
  const url = 'https://hooks.slack.com/services/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'
        //'https://hooks.slack.com/services/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'
 
