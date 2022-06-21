@@ -19,7 +19,7 @@ steps:
           - label: "No"
             value: "no"
 
-  - label: "Triggering Pipeline2 : Yes or No"
+  - label: "Triggering Pipeline2 : Yes  or No"
     key: "next_file"
     depends_on: "Second"
     command: |
