@@ -4,7 +4,6 @@ steps:
       curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
     label: ':hammer:'
     key: "First"
-    command: ""
   - wait
   - block: ":rocket: Approval Release!"
     depends_on: "First"
