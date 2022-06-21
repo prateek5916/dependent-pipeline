@@ -30,3 +30,6 @@ steps:
       else
         echo "GoodBye"
       fi
+
+notify:
+  - slack: "#slack-notify"
