@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 const { IncomingWebhook } = require('@slack/webhook');
 
- const channel = 'buildkite-alert';
- const url = 'https://hooks.slack.com/services/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'
+ const channel = 'random';
+ const url = 'https://hooks.slack.com/services/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'
+       //'https://hooks.slack.com/services/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'
 
 // function postMessage(text) {
 //   const webhook = new IncomingWebhook(url);
