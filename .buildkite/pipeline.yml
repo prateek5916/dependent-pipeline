@@ -1,7 +1,6 @@
 steps:
   - command: |
       echo 'First Stage'
-      node .buildkite/slack.js
     label: ':hammer:'
     key: "First"
   - wait
