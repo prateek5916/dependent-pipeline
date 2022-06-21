@@ -4,7 +4,7 @@ const { IncomingWebhook } = require('@slack/webhook');
 const channel = 'buildkite-alert';
 const url = 'https://hooks.slack.com/services/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'
 
-postMessage = async (text) => {
+function postMessage(text) {
   const webhook = new IncomingWebhook(url);
   try {
     webhook.send({
