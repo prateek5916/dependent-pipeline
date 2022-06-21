@@ -1,9 +1,7 @@
 steps:
   - command: |
       echo 'First Stage'
-      # curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
-      npm install @slack/webhook
-      #node .buildkite/slack.js
+      node .buildkite/slack.js
     label: ':hammer:'
     key: "First"
   - wait
