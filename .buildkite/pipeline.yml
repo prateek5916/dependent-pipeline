@@ -1,25 +1,25 @@
-steps:
-  - command: |
-      echo 'First Stage'
-      # node .buildkite/slack.js
-    label: ':hammer:'
-    key: "First"
-  - wait
-  - block: ":rocket: Approval Release!"
-    depends_on: "First"
-    key: "Second"
-    prompt: Select Yes or No to deploy Murray Env.
-    fields:
-      - select: "Approval Stage"
-        required: true
-        default: "yes"
-        key: "approval_stage"
-        multiple: false
-        options:
-          - label: "Yes"
-            value: "yes"
-          - label: "No"
-            value: "no"
+# steps:
+#   - command: |
+#       echo 'First Stage'
+#       # node .buildkite/slack.js
+#     label: ':hammer:'
+#     key: "First"
+#   - wait
+#   - block: ":rocket: Approval Release!"
+#     depends_on: "First"
+#     key: "Second"
+#     prompt: Select Yes or No to deploy Murray Env.
+#     fields:
+#       - select: "Approval Stage"
+#         required: true
+#         default: "yes"
+#         key: "approval_stage"
+#         multiple: false
+#         options:
+#           - label: "Yes"
+#             value: "yes"
+#           - label: "No"
+#             value: "no"
 
   # - label: "Triggering Pipeline2 : Yes  or No"
   #   key: "next_file"
