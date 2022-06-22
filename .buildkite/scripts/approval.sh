@@ -6,5 +6,5 @@
 
 
 
-demo=$(buildkite-agent step get "outcome" --step "one") 
+demo="$(buildkite-agent step get "outcome" --step "one")" 
 echo $demo
