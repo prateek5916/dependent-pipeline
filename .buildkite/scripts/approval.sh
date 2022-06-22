@@ -1,6 +1,10 @@
 #!/bin/bash
-set -eo pipefail
 
-APPROVAL_RESPONSE="$(buildkite-agent meta-data get "release_type")"
-echo "approval: $APPROVAL_RESPONSE"
-echo "My name is Khan"
+# APPROVAL_RESPONSE="$(buildkite-agent meta-data get "release_type")"
+# echo "approval: $APPROVAL_RESPONSE"
+# echo "My name is Khan"
+
+
+
+demo=$(buildkite-agent step get "outcome" --step "one") 
+echo $demo

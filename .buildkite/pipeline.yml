@@ -40,8 +40,7 @@
     continue_on_failure: true
     
   - label: 'Step 2'
-    command: |
-       demo=$(buildkite-agent step get "outcome" --step "one") 
-        echo $demo
+    command: .buildkite/scripts/approval.sh
+    
 notify:
   - slack: "#slack-notify"
