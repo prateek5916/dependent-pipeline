@@ -42,8 +42,9 @@
   - label: 'Step 2'
     command: .buildkite/scripts/approval.sh
     notify:
-    - webhook: "https://hooks.slack.com/services/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"
-      slack: "#general"
+    - slack: "#general"
+    #- webhook: "https://hooks.slack.com/services/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"
+    #  slack: "#general"
     
 notify:
   - slack: "#slack-notify"
