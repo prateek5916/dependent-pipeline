@@ -33,7 +33,7 @@
   #     else
   #       echo "GoodBye"
   #     fi
---------
+# --------
 # steps:
 #   - label: 'Step 1'
 #     command: "false"
@@ -57,7 +57,7 @@
 #   - slack: "#alert"
 #     if: build.state == "failed"
 #     if: 'build.pull_request.id == null'
----------
+# ---------
 
 - command: echo 'Last Stage'
   label: ':rocket:'
@@ -74,7 +74,7 @@
       var1: "hello world"
       var2: "hello!!!"
 
------------
+# -----------
     
 #    .buildkite/scripts/approval.sh
 
