@@ -46,7 +46,7 @@ steps:
           channels:
             - "#alert"
           message: "conditional notification"
-        if: build.author.name == "Prateek Khandelwal"
+        if: build.pull_request.id == null
 #    .buildkite/scripts/approval.sh
     
 # notify:
