@@ -46,7 +46,7 @@ steps:
           channels:
             - "#alert"
           message: "conditional notification"
-        if: build.author.name == "abc"
+        if: build.author.name == "Prateek Khandelwal"
 #    .buildkite/scripts/approval.sh
     
 # notify:
