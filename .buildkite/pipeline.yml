@@ -61,8 +61,6 @@
 
 - command: .buildkite/scripts/approval.sh
   label: ':rocket:'
-  branches: "master"
-  async: false
   build:
     commit: "$BUILDKITE_COMMIT"
     branch: "$BUILDKITE_BRANCH"
