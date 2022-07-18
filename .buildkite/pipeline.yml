@@ -41,12 +41,13 @@ steps:
     
   - label: 'Step 2'
     command: echo "Hello!"
-    notify:
-      - slack:
-          channels:
-            - "#debug"
-          message: "conditional notification"
-        if: build.pull_request.id != null
+    
+notify:
+  - slack:
+      channels:
+        - "#debug"
+      message: "conditional notification"
+    if: build.pull_request.id != null
 #    .buildkite/scripts/approval.sh
     
     
