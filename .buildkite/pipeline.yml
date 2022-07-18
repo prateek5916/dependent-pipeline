@@ -31,7 +31,7 @@
   #       echo "GoodBye"
   #     fi
 
-
+steps:
   - label: 'Step 1'
     command: "false"
     key: 'one'
@@ -41,10 +41,11 @@
     
   - label: 'Step 2'
     command: .buildkite/scripts/approval.sh
-    notify:
-      - slack: "#alert"
-        if: build.state == "failed"
-#         if: 'build.pull_request.id == null'
+    
+notify:
+  - slack: "#alert"
+    if: build.state == "failed"
+#     if: 'build.pull_request.id == null'
     
 # notify:
 #   - webhook: "https://hooks.slack.com/services/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"
