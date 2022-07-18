@@ -41,6 +41,9 @@
     
   - label: 'Step 2'
     command: .buildkite/scripts/approval.sh
+    notify:
+      - slack: "#general"
+#         if: build.state == "passed"
 #     notify:
 #     - slack: "#general"
 #     #  slack: "#general"
