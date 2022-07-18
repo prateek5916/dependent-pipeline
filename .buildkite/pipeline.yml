@@ -45,7 +45,8 @@ steps:
       - slack:
           channels:
             - "#alert"
-          message: "SRE related information here..."
+          message: "conditional notification"
+        if: build.state == "failed"
 #    .buildkite/scripts/approval.sh
     
 # notify:
