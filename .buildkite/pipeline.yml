@@ -46,7 +46,7 @@ steps:
           channels:
             - "#alert"
           message: "conditional notification"
-        if: build.state == "failed"
+        if: build.author.name == "abc"
 #    .buildkite/scripts/approval.sh
     
 # notify:
