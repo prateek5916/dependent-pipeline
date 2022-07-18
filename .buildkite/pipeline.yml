@@ -40,11 +40,15 @@ steps:
     continue_on_failure: true
     
   - label: 'Step 2'
-    command: .buildkite/scripts/approval.sh
+    command: echo "Hello!"
+    notify:
+      - slack: "#alert"
+        if: build.state == "failed"
+#    .buildkite/scripts/approval.sh
     
-notify:
-  - slack: "#alert"
-    if: build.state == "failed"
+# notify:
+#   - slack: "#alert"
+#     if: build.state == "failed"
 #     if: 'build.pull_request.id == null'
     
 # notify:
