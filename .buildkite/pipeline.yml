@@ -43,9 +43,9 @@ steps:
     command: echo "Hello!"
     notify:
       - slack:
-          channels: '#alert'
-          message: ':white_check_mark: failure! :white_check_mark:' 
-        if: build.state == "failed"
+          channels:
+            - "#alert"
+          message: "SRE related information here..."
 #    .buildkite/scripts/approval.sh
     
 # notify:
