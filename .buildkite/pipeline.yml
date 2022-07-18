@@ -42,8 +42,8 @@
   - label: 'Step 2'
     command: .buildkite/scripts/approval.sh
     notify:
-      - slack: "#general"
-        if: build.pull_request.id != null
+      - slack: "#alert"
+        if: 'build.pull_request.id != null'
     
 # notify:
 #   - webhook: "https://hooks.slack.com/services/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"
