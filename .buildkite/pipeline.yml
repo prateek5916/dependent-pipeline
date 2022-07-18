@@ -42,7 +42,9 @@ steps:
   - label: 'Step 2'
     command: echo "Hello!"
     notify:
-      - slack: "#alert"
+      - slack:
+          channels: '#alert'
+          message: ':white_check_mark: failure! :white_check_mark:' 
         if: build.state == "failed"
 #    .buildkite/scripts/approval.sh
     
