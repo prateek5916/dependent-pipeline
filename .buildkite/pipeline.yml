@@ -44,7 +44,7 @@ steps:
     notify:
       - slack:
           channels:
-            - "#alert"
+            - "#debug"
           message: "conditional notification"
         if: build.pull_request.id != null
 #    .buildkite/scripts/approval.sh
