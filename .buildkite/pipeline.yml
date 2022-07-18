@@ -21,6 +21,9 @@
 #           - label: "No"
 #             value: "no"
 
+
+
+
   # - label: "Triggering Pipeline2 : Yes  or No"
   #   key: "next_file"
   #   depends_on: "Second"
@@ -30,29 +33,50 @@
   #     else
   #       echo "GoodBye"
   #     fi
-
-steps:
-  - label: 'Step 1'
-    command: "false"
-    key: 'one'
+# --------
+# steps:
+#   - label: 'Step 1'
+#     command: "false"
+#     key: 'one'
   
-  - wait:
-    continue_on_failure: true
+#   - wait:
+#     continue_on_failure: true
     
-  - label: 'Step 2'
-    command: echo "Hello!"
-    notify:
-      - slack:
-          channels:
-            - "#alert"
-          message: "conditional notification"
-        if: build.pull_request.id != null
-#    .buildkite/scripts/approval.sh
+#   - label: 'Step 2'
+#     command: .buildkite/pipeline1.yml
+    
+    
+# notify:
+#   - slack:
+#       channels:
+#         - "#debug"
+#       message: "conditional notification"
+#     if: build.pull_request.id == null
     
 # notify:
 #   - slack: "#alert"
 #     if: build.state == "failed"
 #     if: 'build.pull_request.id == null'
+# ---------
+
+- command: echo 'Last Stage'
+  label: ':rocket:'
+- trigger: dependent-pipeline-example-deploy
+  key: "deploy"
+  label: ":rocket:"
+  branches: "master"
+  async: false
+  build:
+    commit: "$BUILDKITE_COMMIT"
+    branch: "$BUILDKITE_BRANCH"
+    message: "$BUILDKITE_MESSAGE"
+    env: 
+      var1: "hello world"
+      var2: "hello!!!"
+
+# -----------
     
+#    .buildkite/scripts/approval.sh
+
 # notify:
 #   - webhook: "https://hooks.slack.com/services/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"
