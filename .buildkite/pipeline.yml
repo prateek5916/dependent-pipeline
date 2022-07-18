@@ -50,7 +50,7 @@ notify:
       channels:
         - "#debug"
       message: "conditional notification"
-    if: build.pull_request.id != null
+    if: build.pull_request.id == null
 #    .buildkite/scripts/approval.sh
     
     
