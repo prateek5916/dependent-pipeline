@@ -13,3 +13,6 @@
 # echo $var2
 
 sleep 30s
+curl "https://api.buildkite.com/v2/organizations/prateek-inc/pipelines/dependent-pipeline-example-tests/builds/{number}"
+
+curl -X PUT "https://api.buildkite.com/v2/organizations/{org.slug}/pipelines/{pipeline.slug}/builds/{number}/cancel"
