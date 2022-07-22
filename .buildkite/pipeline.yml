@@ -52,7 +52,9 @@
 
 
 notify:
-  - slack: "#alert"
+  - slack: 
+      channels:
+        - "#alert"
       message: "blocked state notification"
     if: build.state == "blocked"
 steps:
