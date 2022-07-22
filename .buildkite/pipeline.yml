@@ -51,11 +51,11 @@
 # #    .buildkite/scripts/approval.sh
 
 
-notify:
-  - slack: "#alert"
-    if: build.state == "blocked"
-steps:
-  - block: "unblock me"
+# notify:
+#   - slack: "#alert"
+#     if: build.state == "blocked"
+# steps:
+#   - block: "unblock me"
   
   
   
