@@ -56,6 +56,17 @@ notify:
     if: build.state == "blocked"
 steps:
   - block: "unblock me"
+  
+  
+  
+notify:
+  - slack: "#alert"
+    if: build.state == "blocked"
+  - slack: "#alert"
+    if: build.state == "canceled"
+steps:
+  - block: "unblock me"
+  - command: .buildkite/scripts/approval.sh
 
 
 # notify:
