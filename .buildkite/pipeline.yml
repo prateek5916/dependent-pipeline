@@ -50,10 +50,10 @@
 #         if: build.pull_request.id != null
 # #    .buildkite/scripts/approval.sh
 
-steps:
-  - label: "Step 1"
-    command: "false"
-    key: "one"
+# steps:
+#   - label: "Step 1"
+#     command: "false"
+#     key: "one"
 notify:
   - slack: 
       channels:
