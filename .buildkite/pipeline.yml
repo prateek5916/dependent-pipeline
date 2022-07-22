@@ -53,6 +53,7 @@
 steps:
   - command: |
       echo 'First Stage'
+    label: ':hammer:'
 notify:
   - slack: 
       channels:
