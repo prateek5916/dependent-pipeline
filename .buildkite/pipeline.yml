@@ -51,9 +51,9 @@
 # #    .buildkite/scripts/approval.sh
 
 steps:
-  - label: 'Step 1'
+  - label: "Step 1"
     command: "false"
-    key: 'one'
+    key: "one"
 notify:
   - slack: 
       channels:
@@ -62,6 +62,8 @@ notify:
     if: build.state == "blocked"
 steps:
   - block: "unblock me"
+    key: "Second"
+    depends_on: "one"
   
   
   
