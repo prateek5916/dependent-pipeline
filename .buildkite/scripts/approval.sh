@@ -6,8 +6,10 @@
 
 
 
-demo="$(buildkite-agent step get "outcome" --step "one")" 
-echo $demo
+# demo="$(buildkite-agent step get "outcome" --step "one")" 
+# echo $demo
 
-echo $var1
-echo $var2
+# echo $var1
+# echo $var2
+
+sleep 30s
