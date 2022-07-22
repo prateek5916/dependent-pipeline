@@ -51,9 +51,9 @@
 # #    .buildkite/scripts/approval.sh
 
 steps:
-  - command: |
-      echo 'First Stage'
-    label: ':hammer:'
+  - label: 'Step 1'
+    command: "false"
+    key: 'one'
 notify:
   - slack: 
       channels:
