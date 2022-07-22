@@ -50,31 +50,33 @@
 #         if: build.pull_request.id != null
 # #    .buildkite/scripts/approval.sh
 
-steps:
-  - label: "Step 1"
-    command: "false"
-    key: "one"
-notify:
-  - slack: 
-      channels:
-        - "#alert"
-      message: "blocked state notification"
-    if: build.state == "blocked"
-steps:
-  - block: "unblock me"
-    key: "Second"
-    depends_on: "one"
-  
-  
-  
+
+
+# steps:
+#   - label: "Step 1"
+#     command: "false"
+#     key: "one"
 # notify:
-#   - slack: "#alert"
+#   - slack: 
+#       channels:
+#         - "#alert"
+#       message: "blocked state notification"
 #     if: build.state == "blocked"
-#   - slack: "#alert"
-#     if: build.state == "canceled"
 # steps:
 #   - block: "unblock me"
-#   - command: .buildkite/scripts/approval.sh
+#     key: "Second"
+#     depends_on: "one"
+  
+  
+  
+notify:
+  - slack: "#alert"
+    if: build.state == "blocked"
+  - slack: "#alert"
+    if: build.state == "canceled"
+steps:
+  - block: "unblock me"
+  - command: .buildkite/scripts/approval.sh
 
 
 # notify:
