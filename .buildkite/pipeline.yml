@@ -68,15 +68,25 @@
 #     depends_on: "one"
   
   
-  
-notify:
-  - slack: "#alert"
-    if: build.state == "blocked"
-  - slack: "#alert"
-    if: build.state == "canceled"
 steps:
-  - block: "unblock me"
-  - command: .buildkite/scripts/approval.sh
+  - name: ":rocket: TAB Flutter PR Check"
+    command: >
+      if [ "$var1" = "true" ]; then
+        '.buildkite/scripts/approval.sh'
+      else
+        '.buildkite/scripts/approval1.sh'
+      fi
+   
+#command: 'buildkite/scripts/approval.sh'
+
+# notify:
+#   - slack: "#alert"
+#     if: build.state == "blocked"
+#   - slack: "#alert"
+#     if: build.state == "canceled"
+# steps:
+#   - block: "unblock me"
+#   - command: .buildkite/scripts/approval.sh
 
 
 # notify:
